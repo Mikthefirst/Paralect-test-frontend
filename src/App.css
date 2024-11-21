@@ -1,38 +1,47 @@
+/* Общие стили для таблицы */
 .App {
-  text-align: center;
+  background-color: #f0f2f5;
+  padding: 0px;
+  height: 95vh; /* Light background color */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ant-table-thead > tr > th {
+  background-color: #001529; /* Dark blue color for header */
+  color: #ffffff; /* White text color for header */
+  text-align: center; /* Center text in header */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ant-table-tbody > tr > td {
+  text-align: left; /* Center text in body */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Центрирование пагинации */
+.ant-pagination {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: center; /* Center pagination */
+  margin-top: 20px; /* Space above pagination */
 }
 
-.App-link {
-  color: #61dafb;
+/* Добавление контрастного цвета и стиля для строк */
+.ant-table-tbody > tr.ant-table-row:nth-child(odd) {
+  background-color: #f9f9f9; /* Light gray for odd rows */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ant-table-tbody > tr.ant-table-row:nth-child(even) {
+  background-color: #e0e0e0; /* Darker gray for even rows */
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background-color: #1277dc; /* Dark grey on hover */
+  color: #f11e1e; /* White text on hover */
+}
+
+/* Заголовок таблицы с контрастным цветом */
+.ant-table-title {
+  background-color: #052f5f; /* Indigo color for table title */
+  color: #ffffff; /* White text for table title */
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
 }
