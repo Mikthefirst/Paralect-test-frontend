@@ -1,0 +1,47 @@
+/* Общие стили для таблицы */
+.vacancy-table {
+  background-color: #f0f2f5;
+  padding: 0px;
+  height: 95vh; /* Light background color */
+}
+
+.ant-table-thead > tr > th {
+  background-color: #001529; /* Dark blue color for header */
+  color: #ffffff; /* White text color for header */
+  text-align: center; /* Center text in header */
+}
+
+.ant-table-tbody > tr > td {
+  text-align: left; /* Center text in body */
+}
+
+/* Центрирование пагинации */
+.ant-pagination {
+  display: flex;
+  justify-content: center; /* Center pagination */
+  margin-top: 20px; /* Space above pagination */
+}
+
+/* Добавление контрастного цвета и стиля для строк */
+.ant-table-tbody > tr.ant-table-row:nth-child(odd) {
+  background-color: #f9f9f9; /* Light gray for odd rows */
+}
+
+.ant-table-tbody > tr.ant-table-row:nth-child(even) {
+  background-color: #e0e0e0; /* Darker gray for even rows */
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background-color: #1277dc; /* Dark grey on hover */
+  color: #f11e1e; /* White text on hover */
+}
+
+/* Заголовок таблицы с контрастным цветом */
+.ant-table-title {
+  background-color: #052f5f; /* Indigo color for table title */
+  color: #ffffff; /* White text for table title */
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
