@@ -10,17 +10,19 @@ function AddGroup({ onClose }) {
 
 
     const addVacancy = async () => {
-
+        //Company, Position, SalaryRange, ApplicationStatus, Note
         try {
-
-            /*
-                        const res = await fetch(`${process.env.REACT_APP_SERVER}/addRoom`, {
-                            method: 'POST',
-                            'body': formData,
-                            credentials: 'include'
-                        });
-            
-                        console.log('Status code: ', res.status);*/
+            const res = await fetch(`http://localhost:8080/app/vacancies`,
+                {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ Company: CompanyName, Position, SalaryRange, ApplicationStatus, Note }),
+                    credentials: 'include'
+                });
+            console.log('Status code: ', res.status);
+            if (res.status === 200) {
+                alert('New vacancy have been added');
+                onClose();
+            }
         }
         catch (e) {
             console.error(e);

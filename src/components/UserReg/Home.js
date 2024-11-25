@@ -8,7 +8,7 @@ function Home() {
     const [password, setPassword] = useState('');
     const [file, setFile] = useState(null);
 
-    const joinRoom = async () => {
+    const join = async () => {
         if (username !== '' && password !== '' && file !== null) {
             console.log('working:', { username, password, file });
 
@@ -17,20 +17,24 @@ function Home() {
             formData.append('password', password);
             formData.append('file', file);
             //http://localhost:8080/app/AddUser/
+            let response;
             try {
-                const response = await fetch(`http://localhost:8080/app/AddUser/`, {
+                response = await fetch(`http://localhost:8080/app/AddUser/`, {
                     method: 'POST',
                     body: formData,
                     credentials: 'include'
                 });
+
                 console.log('responce status:', response.status);
-                if (document.cookie.username) {
+                if (response.status) {
                     document.location.href = '/vacancies';
                 } else {
                     console.error('Registration failed');
                 }
             } catch (err) {
+                console.log('responce status:', response.status);
                 console.error(err);
+
             }
         }
     };
@@ -59,7 +63,7 @@ function Home() {
                 <button
                     className={`${styles.btn} btn btn-secondary`}
                     style={{ width: '100%' }}
-                    onClick={joinRoom}>
+                    onClick={join}>
                     Sign in
                 </button>
             </div>

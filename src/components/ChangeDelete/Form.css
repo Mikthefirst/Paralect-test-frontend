@@ -23,6 +23,15 @@
   font-size: 1em;
 }
 
+.input-field-delete {
+  background-color: rgb(247, 172, 172);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 1em;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -58,4 +67,13 @@ p {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1001;
+}
+
+.group-change {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: rgb(255, 225, 186);
 }
